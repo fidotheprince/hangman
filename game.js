@@ -1,19 +1,29 @@
 
-function hiddenWord() {
+function selectWord() {
 
     //randomly select a word 
     //us math to access index, display string at that index
+    //number of letters rendered on hmtl 
+    //return length of word -> passed into -> hiddenWord()
 
     var wordBank = [ "cat", "hat", "bat", "spicy"];
     var wordIndex = Math.floor(Math.random() * wordBank.length);
     var lengthOfWord = wordBank[wordIndex].length;
 
-    for (i = 0; i <= lengthOfWord; i++) {
+    document.getElementById("numOfLetters").innerHTML = "You word has " + lengthOfWord + " letters!";
+    
+    return lengthOfWord;
 
-        console.log( lengthOfWord[i] = "-")
-        
-    }
 }
+
+function hiddeWord() {
+    //return word to html represented by underscores
+    console.log(lengthOfWord);
+
+}
+
+
+
 
 
 
