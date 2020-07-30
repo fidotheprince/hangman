@@ -3,9 +3,9 @@ function selectWord() {
 
     //randomly select a word 
     //us math to access index, display string at that index
-    //number of letters rendered on hmtl 
+    //number of letters rendered on html 
 
-    var wordBank = [ "cat", "hat", "bat", "spicy"];
+    var wordBank = [ "CAT", "HAT", "BAT", "SPICY"];
 
     var wordIndex = Math.floor(Math.random() * wordBank.length);
     var selectedWord = wordBank[wordIndex];
@@ -18,6 +18,7 @@ function selectWord() {
     var splitWord = selectedWord.split("");
 
     //render word in html represented by underscores 
+    //pass word (array) into your checkValue 
 
     function makeUnder(letter) {
         var docTag = document.createElement('span');
@@ -27,6 +28,27 @@ function selectWord() {
 
     splitWord.forEach(makeUnder);
 
+    checkValue(splitWord);
+
+}
+
+function restartGame() {
+    location.reload();
+}
+
+function checkValue(gameWord, selectedLetter) {
+    console.log(gameWord);
+    //grab word
+    //compare letters in  word to user input
+    for (let i = 0; i < gameWord.length; i++) {
+        var hiddenLetter = gameWord[i];
+        if(hiddenLetter == selectedLetter) {
+            console.log("yes");
+        } else {
+            console.log("no");
+        }
+    }
+    //determine whether or user input is in selectedWord
 }
 
 

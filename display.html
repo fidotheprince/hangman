@@ -9,7 +9,37 @@
 
 <h1>Welcome to Hang Man, man!</h1>
 <p> Press the button below to get started </p>
+<!-- your selectWord function can be clicked an infinate number of times -->
 <button onclick="selectWord()">Start</button>
+<button onclick="restartGame()">New Game</button>
+
+<ul id = "alphabet">
+    <li id = "letter"><button onclick= "checkValue('A')">A</button></li>
+    <li id = "letter"><button onclick= "checkValue('B')">B</button></li>
+    <li id = "letter"><button onclick= "checkValue('C')">C</button></li>
+</ul>
+
+<!-- to-do, temporary styles to go it's own style sheet linked to display.html -->
+<style>
+
+   
+
+    #alphabet {
+        list-style-type: none;
+        display: flex;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    #letter {
+        padding: 5px;
+    }
+
+
+</style>
+
 <p id="numOfLetters"></p>
 <p id="mysteryWord"></p>
 
