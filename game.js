@@ -22,12 +22,14 @@ function selectWord() {
 let gameWord = selectWord();
 let totalLetters = gameWord.length;
 let winCount = 0;
+let letterBank = [];
+let maxGuessCount = 6;
+
+
 console.log(gameWord, totalLetters);
 
+function compareValue(inputLetter, hiddenWord = gameWord, lossArr = letterBank) {
 
-
-
-function compareValue(inputLetter, hiddenWord = gameWord) {
     //iterate through existing array to compare input
     for (let i = 0; i <= hiddenWord.length - 1; i++) {
         let hiddenLetter = hiddenWord[i];
@@ -36,39 +38,45 @@ function compareValue(inputLetter, hiddenWord = gameWord) {
     //replace match with a boolean statement of true 
         if (inputLetter === hiddenLetter) {
             hiddenWord.splice(i, 1, true);
-        } 
+        } else {
+            lossArr.push(inputLetter);
+            //perhaps send input letter to a letter bank
+            //once letter banks are full # = maxGuessCount = loss
+        }
     }
 
+    console.log(lossArr);
     console.log(hiddenWord);
     winState(hiddenWord);
 
 }
 
 //iterate through evalArr = if all items == true; you win
-function winState(evalArr, count = winCount) {
+function winState(evalArr, countVic = winCount, lettersLeft = totalLetters) {
 
   evalArr.forEach(checkWin);
 
   function checkWin(item){
 
     if (item === true) {
-        count++;
-    }
+        countVic++;
+        lettersLeft--; 
+    } 
+
+    return countVic; 
     //winState might be able to handle to L as well
   }
 
-  console.log(count);
+  console.log(countVic + " Count to Victory", lettersLeft + " Letters left");
 
 }
-
-
-
-
 
 
 function restartGame() {
     location.reload();
 }
+
+
 
 
 
