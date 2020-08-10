@@ -10,14 +10,36 @@
 <h1>Welcome to Hang Man, man!</h1>
 <p> Press the button below to get started </p>
 <!-- your selectWord function can be clicked an infinate number of times -->
-<button onclick="selectWord()">Start</button>
-<button onclick="restartGame()">New Game</button>
+<button id="mainButton" onclick="selectWord()">Start</button>
+<button id="mainButton" onclick="restartGame()">New Game</button>
 
 <ul id = "alphabet">
-    <li id = "letter"><button onclick= "compareValue('C')">C</button></li>
     <li id = "letter"><button onclick= "compareValue('A')">A</button></li>
+    <li id = "letter"><button onclick= "compareValue('B')">B</button></li>
+    <li id = "letter"><button onclick= "compareValue('C')">C</button></li>
+    <li id = "letter"><button onclick= "compareValue('D')">D</button></li>
+    <li id = "letter"><button onclick= "compareValue('E')">E</button></li>
+    <li id = "letter"><button onclick= "compareValue('F')">F</button></li>
+    <li id = "letter"><button onclick= "compareValue('G')">G</button></li>
+    <li id = "letter"><button onclick= "compareValue('H')">H</button></li>
+    <li id = "letter"><button onclick= "compareValue('I')">I</button></li>
+    <li id = "letter"><button onclick= "compareValue('J')">J</button></li>
+    <li id = "letter"><button onclick= "compareValue('K')">K</button></li>
+    <li id = "letter"><button onclick= "compareValue('L')">L</button></li>
+    <li id = "letter"><button onclick= "compareValue('M')">M</button></li>
+    <li id = "letter"><button onclick= "compareValue('N')">N</button></li>
+    <li id = "letter"><button onclick= "compareValue('O')">O</button></li>
+    <li id = "letter"><button onclick= "compareValue('P')">P</button></li>
+    <li id = "letter"><button onclick= "compareValue('Q')">Q</button></li>
+    <li id = "letter"><button onclick= "compareValue('R')">R</button></li>
+    <li id = "letter"><button onclick= "compareValue('S')">S</button></li>
     <li id = "letter"><button onclick= "compareValue('T')">T</button></li>
-    <li id = "letter"><button onclick= "add()">add</button></li>
+    <li id = "letter"><button onclick= "compareValue('U')">U</button></li>
+    <li id = "letter"><button onclick= "compareValue('V')">V</button></li>
+    <li id = "letter"><button onclick= "compareValue('W')">W</button></li>
+    <li id = "letter"><button onclick= "compareValue('X')">X</button></li>
+    <li id = "letter"><button onclick= "compareValue('Y')">Y</button></li>
+    <li id = "letter"><button onclick= "compareValue('Z')">Z</button></li>
 </ul>
 
 <!-- to-do, temporary styles to go it's own style sheet linked to display.html -->
@@ -28,15 +50,43 @@
     #alphabet {
         list-style-type: none;
         display: flex;
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-        margin-top: 10px;
+        flex-wrap: wrap;
+        background-color: aliceblue;
     }
 
-    #letter {
-        padding: 5px;
+    li {
+        background-color: #f1f1f1;
+        width: 70px;
+        margin: 10px;
+        text-align: center;
+        line-height: 70px;
     }
+
+    li:hover {
+        background-color: ghostwhite;
+    }
+
+    #mainButton {
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+
+    button {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: large;
+        cursor: pointer;
+        outline: inherit;
+    }
+
+
+
+
 
 
 </style>
