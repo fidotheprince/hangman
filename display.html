@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hang Man, man!</title>
-    <script type="text/javascript" src= "/game.js"></script>
+    
 </head>
 
 <h1>Welcome to Hang Man, man!</h1>
-<p> Press the button below to get started </p>
-<!-- your selectWord function can be clicked an infinate number of times -->
-<button id="mainButton" onclick="selectWord()">Start</button>
 <button id="mainButton" onclick="restartGame()">New Game</button>
+
+<ul>
+    <li id="show"></li>
+</ul>
 
 <ul id = "alphabet">
     <li id = "letter"><button onclick= "compareValue('A')">A</button></li>
@@ -42,10 +43,17 @@
     <li id = "letter"><button onclick= "compareValue('Z')">Z</button></li>
 </ul>
 
+<footer>
+    <script type="text/javascript" src= "/game.js"></script>
+</footer>
+
 <!-- to-do, temporary styles to go it's own style sheet linked to display.html -->
 <style>
 
-   
+    #show {
+        width:auto;
+        list-style-type: none;
+    }
 
     #alphabet {
         list-style-type: none;
