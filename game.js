@@ -1,27 +1,70 @@
-//game.js ONLY handles the logic of the game 
-//guesses allowed determined by body parts in the hang man 1 guess = 1 body part
-//evaluated arrays have to be held globally 
-let guesses = [];
-let winArr = [];
 
-//handles Visual Components of application
 function VisualHandler() {
 
-    //renders blanks for each letter in gameWord 
-    this.letterBlanks = function (gameLettersArr) {
-        let arrBlanks = gameLettersArr.map(makeBlanks);
-        function makeBlanks(letter) {
-            return " __ "
-        };
-        let string = arrBlanks.join(" ");
-        document.getElementById("show").innerHTML = string;
-    } 
+    
+    //make object into an array.join// render dynamically 
+    //newObject with state set the instance before it 
+    //or remove property and value once matched 
+    //I only want one letter to show at a time
+    //potential send letter to as an array item and joing the item? 
+     //push elements to an array // make array string // and then render array 
 
+    this.letterBlanks = function (obj) {
 
+        let arrToStr = [];
+
+        for (const letterProp in obj) {
+           
+            if(obj[letterProp] === true) {
+                arrToStr.push(letterProp);
+            } else if(obj[letterProp] === false) {
+                arrToStr.push(" __ ");
+            }
+
+            document.getElementById('show').innerHTML = arrToStr.join(" ");
+          
+        }     
+     }
+    
+        //if value at letter key is false -> show " _ "
+        //else if value at letter key is true -> show " value (e.g. letter)"
+        //document.getElementById("show").innerHTML = gameLettersArr.join(" ");
+} 
+
+//this only has to sort an object once "key" = letter : "value" = boolean
+//in order to have the object update after every onclick event, we have to keep the state of that object globally 
+function orgObject() {
+        this.flipKeyValue = function(obj) {
+            let newObj = {};
+            for(var key in obj) {
+                newObj[obj[key]] = false;
+            }
+            //send to new obj
+            return newObj
+        };      
 }
 
-//randomly select a word / factory constructer
-//us math to access index, display string at that index
+function UpdateObjState () {
+
+    this.matchedLetter = function (obj, letter) {
+        
+        for (letterProp in obj) {
+            if (letterProp === letter) {
+                obj[letterProp] = true;
+            }
+        }
+            return obj
+        
+    }
+}
+
+
+//object passed from here is ObjToDisplay(change this name) -> make word object 
+//creat object that switch value to true when there is a match  -> sort object 
+//this object passes the object with set values to -> change value and send to be redered 
+//your visualHandler 
+       
+
 function selectWord() {
    
     const wordBank = [ "CAT", "HAT", "BAT", "SPICY", "CCC", "FOREVER"];
@@ -32,47 +75,67 @@ function selectWord() {
 
 }
 
-//compareValue - evaluates user input and return indicates a win or a loss 
-function compareValue(inputLetter, hiddenWord = gameWord, guessBank = guesses, winCount = winArr) {
-    //add user input into guessBank(array) regardless of a correct or incorrect guess
+function compareValue(
+    inputLetter, 
+    hiddenWord = gameWord, 
+    guessBank = guesses, 
+    winCount = winArr, 
+    wordObj = sortedObj) {
+
     guessBank.push(inputLetter);
     hiddenWord.forEach(compare);
-    //if user input matches a hidden letter, remove input from the guessBank 
-    //preventing the total number of guesses (items in guessBank) from incrementing 
-    //if user input matches a hidden letter, add input to winCount(array)
+
     function compare(secretLetter) {
+        let findInObj = new UpdateObjState();
+        let evalObject;
+        let showToUser = new VisualHandler();
+
         if (secretLetter === inputLetter) {
             guessBank.splice(inputLetter, 1);
             winCount.push(inputLetter);
+            evalObject = findInObj.matchedLetter(wordObj, inputLetter); 
+            showToUser.letterBlanks(evalObject)
+            console.log(winCount);
         }
     }
-    //when guessBank reaches a certain number (of allowed guesses), the player loses 
+
     if (guessBank.length === 7) {
         console.log("you lose");
-        //render restart function on front end 
         console.log("Would you like to play again?")
+
     }
-    //when number of letters (items) in the winCount match the number of letters (items) in the hiddenWord, the player wins
+    
     if( winCount.length === hiddenWord.length) {
         console.log("you win");
-        //render restart function on front end
         console.log("Would you like to play again?")
     }
-   
 
 }
-
-//creates a new instance of word array 
-//renders state word 
-const gameWord = new selectWord();
-const visuals = new VisualHandler();
-visuals.letterBlanks(gameWord);
-
-
 
 function restartGame() {
     location.reload();
 }
-//display gameWord  
-console.log(gameWord);
 
+
+let guesses = [];
+let winArr = [];
+const gameWord = new selectWord();
+let unSortedObj = Object.assign({}, gameWord);
+let sort = new orgObject();
+let sortedObj = sort.flipKeyValue(unSortedObj);
+//
+console.log(sortedObj);
+
+
+
+
+//     //
+//     this.guessResult = function(guess) {
+//         if (guess == true) {
+//             //potential render word in place of array 
+//             document.getElementById("testTwo").innerHTML = "You win";
+//         } else if (guess = false) {
+//             document.getElementById("testTwo").innerHTML = "You lose";
+//         }
+//     };
+// }
