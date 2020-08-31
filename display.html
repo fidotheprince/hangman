@@ -3,103 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hang Man, man!</title>
-    
+    <title>HANGMAN</title>
 </head>
 
-<h1>Welcome to Hang Man, man!</h1>
-<button id="mainButton" onclick="restartGame()">New Game</button>
+<body>
+    <div class='page'>
+        <div class='section menu'>
+            <!--Menu-->
+            <div id='buttonLetters'><button id='mainButton' onclick="restartGame()">New Game</button></div>
+            <div id='dispTotalLett'></div>
+        </div>
+        <div class='section header'>
+            <!--Header-->
+            HANGMAN
+        </div>
+        <div class='section content'>
+            <!--Hangman-->
+            <div id = "hangman">
+                <div class="part" id = "rope"></div>
+                <div class="part" id = "head"></div>
+                <div class="part" id = "torso"></div>
+                <div class="part" id = "legs"></div>
+                <div class="part" id = "feet"></div>
+            </div>
+        </div>
+        <div class='section feature-2'>
+            <!--Alphabet-->
+            <div>
+                <ul id = "alphabet">
+                    <li class = "letterContainer"><button class = "letter" id = "A" onclick= "compareValue('A')" >A</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "B" onclick= "compareValue('B')" >B</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "C" onclick= "compareValue('C')" >C</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "D" onclick= "compareValue('D')" >D</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "E" onclick= "compareValue('E')" >E</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "F" onclick= "compareValue('F')" >F</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "G" onclick= "compareValue('G')" >G</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "H" onclick= "compareValue('H')" >H</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "I" onclick= "compareValue('I')" >I</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "J" onclick= "compareValue('J')" >J</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "K" onclick= "compareValue('K')" >K</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "L" onclick= "compareValue('L')" >L</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "M" onclick= "compareValue('M')" >M</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "N" onclick= "compareValue('N')" >N</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "O" onclick= "compareValue('O')" >O</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "P" onclick= "compareValue('P')" >P</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "Q" onclick= "compareValue('Q')" >Q</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "R" onclick= "compareValue('R')" >R</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "S" onclick= "compareValue('S')" >S</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "T" onclick= "compareValue('T')" >T</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "U" onclick= "compareValue('U')" >U</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "V" onclick= "compareValue('V')" >V</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "W" onclick= "compareValue('W')" >W</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "X" onclick= "compareValue('X')" >X</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "Y" onclick= "compareValue('Y')" >Y</button></li>
+                    <li class = "letterContainer"><button class = "letter" id = "Z" onclick= "compareValue('Z')" >Z</button></li>
+                </ul>
+            </div>
+        </div>
+      
+        <div class='section feature-3'>
 
-<ul>
-    <li id="show"></li>
-</ul>
+            <div id="results">
+                <ul>
+                    <li id="show"></li>
+                    <li id="showTwo"></li>
+                </ul>
+            </div>
+        </div>
+      
+    </div>
+    <footer>
+    </footer>
+    
+</body>
+</html>
 
-<ul id = "alphabet">
-    <li id = "letter"><button onclick= "compareValue('A')">A</button></li>
-    <li id = "letter"><button onclick= "compareValue('B')">B</button></li>
-    <li id = "letter"><button onclick= "compareValue('C')">C</button></li>
-    <li id = "letter"><button onclick= "compareValue('D')">D</button></li>
-    <li id = "letter"><button onclick= "compareValue('E')">E</button></li>
-    <li id = "letter"><button onclick= "compareValue('F')">F</button></li>
-    <li id = "letter"><button onclick= "compareValue('G')">G</button></li>
-    <li id = "letter"><button onclick= "compareValue('H')">H</button></li>
-    <li id = "letter"><button onclick= "compareValue('I')">I</button></li>
-    <li id = "letter"><button onclick= "compareValue('J')">J</button></li>
-    <li id = "letter"><button onclick= "compareValue('K')">K</button></li>
-    <li id = "letter"><button onclick= "compareValue('L')">L</button></li>
-    <li id = "letter"><button onclick= "compareValue('M')">M</button></li>
-    <li id = "letter"><button onclick= "compareValue('N')">N</button></li>
-    <li id = "letter"><button onclick= "compareValue('O')">O</button></li>
-    <li id = "letter"><button onclick= "compareValue('P')">P</button></li>
-    <li id = "letter"><button onclick= "compareValue('Q')">Q</button></li>
-    <li id = "letter"><button onclick= "compareValue('R')">R</button></li>
-    <li id = "letter"><button onclick= "compareValue('S')">S</button></li>
-    <li id = "letter"><button onclick= "compareValue('T')">T</button></li>
-    <li id = "letter"><button onclick= "compareValue('U')">U</button></li>
-    <li id = "letter"><button onclick= "compareValue('V')">V</button></li>
-    <li id = "letter"><button onclick= "compareValue('W')">W</button></li>
-    <li id = "letter"><button onclick= "compareValue('X')">X</button></li>
-    <li id = "letter"><button onclick= "compareValue('Y')">Y</button></li>
-    <li id = "letter"><button onclick= "compareValue('Z')">Z</button></li>
-</ul>
+<script type="text/javascript" src= "/game.js"></script>
 
-<!-- to-do, temporary styles to go it's own style sheet linked to display.html -->
+
+
 <style>
-
-    #show {
-        width:auto;
-        list-style-type: none;
+    .page {
+        display: flex;
+        flex-wrap: wrap;
     }
+
+    .section {
+        width: 100%;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .feature {
+            order: 1;
+        }
+
+    .content {
+            order: 2;
+        }
+
+    .menu {
+        
+        height: 75px;
+        background-color: aliceblue;
+    }
+
+    .header {
+  
+        height: auto;
+        padding-top: 20px;
+
+    }
+
+    .content {
+        background-color: aliceblue;
+        height: 0%;
+    }
+    
+    .feature-2 {
+
+        height: auto;
+    }
+    
+    .feature-3 {
+        height: auto;
+        
+    }
+
+    /* Menu */
+    .menu {
+        display: flex;
+        justify-content:space-around;
+    }
+    #mainButton {
+        background-color: #008cba;
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    #mainButton:hover {
+        background-color: #006697;
+    }
+
+    #dispTotalLett {
+        margin-top: 5px;
+        font-size: 25px;
+        color: #ba2e00;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    /* Header */
+
+    .header {
+       text-align: center;
+       font-size: 45px;
+       font-family: 'Courier New', Courier, monospace;
+       color: #006687;
+    }
+
+
+    /* Alphabet */
 
     #alphabet {
         list-style-type: none;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        padding-right: 36px;
         background-color: aliceblue;
+        
     }
 
-    li {
+    .letterContainer {
         background-color: #f1f1f1;
-        width: 70px;
-        margin: 10px;
+        width: 35px;
+        margin: 9px;
         text-align: center;
-        line-height: 70px;
+        line-height: 35px;
     }
 
-    li:hover {
+    .letterContainer:hover {
         background-color: ghostwhite;
     }
 
-    #mainButton {
-        background-color: #f1f1f1;
-        padding: 10px;
-        border-radius: 5px;
-    }
-
-
-    button {
+    .letter {
         background: none;
-        color: inherit;
         border: none;
-        padding: 0;
-        font-family:Arial, Helvetica, sans-serif;
-        font-size: large;
-        cursor: pointer;
-        outline: inherit;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
     }
 
+    /* Result */
+
+    #results {
+       padding-bottom: 20px;
+    }
+
+    #show, #showTwo {
+        list-style-type: none;
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        padding-right: 41px;
+    }
+
+    #show {
+        font-size: 30px;
+    }
+
+    #showTwo {
+        font-size: 56px;
+        color: #ba2e00;
+        font-weight: bold;
+    }
+
+    /* Hangman */
+
+    .part {
+        text-align: center;
+        height: 7%;
+    }
+
+    img {
+        max-width: 70px;
+    }
+
+    #rope {
+        height: 65px;
+    }
+
+    #head {
+        height: 45px;
+    }
+
+    #torso {
+
+        height: 45px;
+    }
+
+    #legs {
+        height: 45px;
+        padding-left: 3.7%;
+    }
+
+    #feet {
+        padding-left: 1%;
+    }
+
+ 
 
 
+    /* Tablet Styles */
+
+    @media only screen and (min-width: 350px) and (max-width: 1090px) {
+        #legs {
+            padding-right: 10px;
+        }
+
+        .header {
+            font-size: 70px;
+        }
+
+        #show {
+            font-size: 35px;
+        }
+    }
+
+    /* Desktop Styles */ 
+
+    @media only screen and (min-width: 1000px){
+        .page {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .header {
+            height: 100px;
+            font-size: 100px;
+        }
+
+        .feature {
+            order: 1;
+        }
+
+        .content {
+            order: 2;
+        }
+
+        #legs {
+        
+            padding-right: 18px;
+        }
+
+        .letterContainer {
+            width: 65px;
+            line-height: 60px;
+        }
+        .letter {
+            font-size: 30px;
+        }
+
+        #show {
+            font-size: 75px;
+        }
+        #showTwo {
+            font-size: 80px;
+        }
+    }
 
 </style>
-
-<p id="numOfLetters"></p>
-<p id="mysteryWord"></p>
-
-</body>
-
-<footer>
-    <script type="text/javascript" src= "/game.js"></script>
-</footer>
-
-</html> 
