@@ -79,13 +79,12 @@ function selectWord() {
     let gameHud = new VisualHandler();
     const wordBank = [ 
         "CAT", "HAT", "BAT", "WATER", 
-        "SPICY", "BORN", "BIRTH", "THIRST",
-        "FRESH", "STRONG", "FACTS", "TRUE",
+        "SPICY", "BORN", "BIRTH", "THIRSTY",
+        "FRESH", "STRENGTH", "FACTS", "TRUE",
         "DOVE", "POWERFUL", "CHAMPION", "FALSE",
         "FAIR", "NOBLE", "PRINCE", "BEST", 
-        "FIRST", "PODIUM", "CROWN", "TECHNO"
+        "FIRST", "PODIUM", "CROWN", "TECHNO",
         ];
-
     let wordIndex = Math.floor(Math.random() * wordBank.length);
     let selectedWord = wordBank[wordIndex];
     let gameWordArr = selectedWord.split("");
