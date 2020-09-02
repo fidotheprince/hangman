@@ -1,2 +1,2 @@
 # hangman
-hangman is no officially being hosted [here] (https://www.hangmantwosix.com)
+hangman is no officially being hosted https://www.hangmantwosix.com
