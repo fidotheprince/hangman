@@ -15,6 +15,6 @@
   "bugs": {
     "url": "https://github.com/fidotheprince/hangman/issues"
   },
-  "homepage": "https://github.com/fidotheprince/hangman#readme"
+  "homepage": "https://github.com/fidotheprince/hangman#readme",
+  "keywords": []
 }
-
