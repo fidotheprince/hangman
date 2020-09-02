@@ -4,7 +4,7 @@
   "description": "vanilla JS rendered with HTML and CSS",
   "main": "display.html",
   "scripts": {
-    "start": "display.html"
+    "start": "package.json"
   },
   "repository": {
     "type": "git",
