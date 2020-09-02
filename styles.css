@@ -1,0 +1,233 @@
+.page {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section {
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature {
+        order: 1;
+    }
+
+.content {
+        order: 2;
+    }
+
+.menu {
+    
+    height: 75px;
+    background-color: aliceblue;
+}
+
+.header {
+
+    height: auto;
+    padding-top: 20px;
+
+}
+
+.content {
+    background-color: aliceblue;
+    height: 0%;
+}
+
+.feature-2 {
+
+    height: auto;
+}
+
+.feature-3 {
+    height: auto;
+    
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    justify-content:space-around;
+}
+#mainButton {
+    background-color: #008cba;
+    font-size: 15px;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+#mainButton:hover {
+    background-color: #006697;
+}
+
+#dispTotalLett {
+    margin-top: 5px;
+    font-size: 25px;
+    color: #ba2e00;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Header */
+
+.header {
+   text-align: center;
+   font-size: 45px;
+   font-family: 'Courier New', Courier, monospace;
+   color: #006687;
+}
+
+
+/* Alphabet */
+
+#alphabet {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 36px;
+    background-color: aliceblue;
+    
+}
+
+.letterContainer {
+    background-color: #f1f1f1;
+    width: 35px;
+    margin: 9px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.letterContainer:hover {
+    background-color: ghostwhite;
+}
+
+.letter {
+    background: none;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Result */
+
+#results {
+   padding-bottom: 20px;
+}
+
+#show, #showTwo {
+    list-style-type: none;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding-right: 41px;
+}
+
+#show {
+    font-size: 30px;
+}
+
+#showTwo {
+    font-size: 56px;
+    color: #ba2e00;
+    font-weight: bold;
+}
+
+/* Hangman */
+
+.part {
+    text-align: center;
+    height: 7%;
+}
+
+img {
+    max-width: 70px;
+}
+
+#rope {
+    height: 65px;
+}
+
+#head {
+    height: 45px;
+}
+
+#torso {
+
+    height: 45px;
+}
+
+#legs {
+    height: 45px;
+    padding-left: 3.7%;
+}
+
+#feet {
+    padding-left: 1%;
+}
+
+
+
+
+/* Tablet Styles */
+
+@media only screen and (min-width: 350px) and (max-width: 1090px) {
+    #legs {
+        padding-right: 10px;
+    }
+
+    .header {
+        font-size: 70px;
+    }
+
+    #show {
+        font-size: 35px;
+    }
+}
+
+/* Desktop Styles */ 
+
+@media only screen and (min-width: 1000px){
+    .page {
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    .header {
+        height: 100px;
+        font-size: 100px;
+    }
+
+    .feature {
+        order: 1;
+    }
+
+    .content {
+        order: 2;
+    }
+
+    #legs {
+    
+        padding-right: 18px;
+    }
+
+    .letterContainer {
+        width: 65px;
+        line-height: 60px;
+    }
+    .letter {
+        font-size: 30px;
+    }
+
+    #show {
+        font-size: 75px;
+    }
+    #showTwo {
+        font-size: 80px;
+    }
+}
