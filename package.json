@@ -2,7 +2,7 @@
   "name": "hangman",
   "version": "1.0.0",
   "description": "vanilla JS rendered with HTML and CSS",
-  "main": "game.js",
+  "main": "display.html",
   "scripts": {
   },
   "repository": {
