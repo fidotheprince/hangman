@@ -2,9 +2,8 @@
   "name": "hangman",
   "version": "1.0.0",
   "description": "vanilla JS rendered with HTML and CSS",
-  "main": "display.html",
+  "main": "",
   "scripts": {
-    "start": "package.json"
   },
   "repository": {
     "type": "git",
