@@ -4,6 +4,7 @@
   "description": "vanilla JS rendered with HTML and CSS",
   "main": "game.js",
   "scripts": {
+    "start": ""
   },
   "repository": {
     "type": "git",
