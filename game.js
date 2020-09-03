@@ -10,7 +10,7 @@ function VisualHandler() {
             if(obj[letterProp] === true) {
                 arrToStr.push(letterProp);
             } else if(obj[letterProp] === false) {
-                arrToStr.push(" __ ");
+                arrToStr.push(" _ ");
             }
 
             document.getElementById('show').innerHTML = arrToStr.join(" ");
@@ -79,11 +79,11 @@ function selectWord() {
     let gameHud = new VisualHandler();
     const wordBank = [ 
         "CAT", "HAT", "BAT", "WATER", 
-        "SPICY", "BORN", "BIRTH", "THIRSTY",
+        "SPICY", "BORN", "BIRTH", "APEX",
         "FRESH", "STRENGTH", "FACTS", "TRUE",
         "DOVE", "POWERFUL", "CHAMPION", "FALSE",
         "FAIR", "NOBLE", "PRINCE", "BEST", 
-        "FIRST", "PODIUM", "CROWN", "TECHNO",
+        "FIRST", "PODIUM", "CROWN", "TECHNO", "XMEN"
         ];
     let wordIndex = Math.floor(Math.random() * wordBank.length);
     let selectedWord = wordBank[wordIndex];
