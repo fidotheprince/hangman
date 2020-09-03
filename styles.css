@@ -189,8 +189,8 @@ img {
         font-size: 35px;
     }
 
-    .letter {
-        color: red;
+    .letterContainer {
+        width: fit-content;
     }
 
 
