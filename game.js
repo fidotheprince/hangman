@@ -18,11 +18,13 @@ function VisualHandler() {
         }     
      };
 
-     this.visualOutcome = function(win) {
+     this.visualOutcome = function(win, word) {
+
 
         if (win === true) {
             document.getElementById("showTwo").innerHTML = "YOU WIN";
         } else if (win === false) {
+            document.getElementById("show").innerHTML = word.join(" ");
             document.getElementById("showTwo").innerHTML = "YOU LOSE";
         }
     };
@@ -127,12 +129,12 @@ function compareValue(
 
     if (guessBank.length === 5) {
     
-        renderResult.visualOutcome(false);
+        renderResult.visualOutcome(false, hiddenWord);
 
     }
     
     if( winCount.length === hiddenWord.length) {
-        renderResult.visualOutcome(true);
+        renderResult.visualOutcome(true, hiddenWord);
 
     }
 
