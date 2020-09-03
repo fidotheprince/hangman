@@ -108,7 +108,7 @@
 
 .letter {
     background: none;
-    padding: auto;
+    margin: auto;
     border: none;
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
