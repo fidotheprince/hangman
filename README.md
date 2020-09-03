@@ -12,7 +12,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 # Demo
 
 <p align= "center" id= "demo" > 
-   <img src="https://i.gyazo.com/5f7979c6a45aaa3a3831bef9ccf64a93.gif" width='100%'>
+  gif goes here w/ width set to 100%
 </p>
 
 # User Stories 
