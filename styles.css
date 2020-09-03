@@ -190,7 +190,7 @@ img {
     }
 
     .letterContainer {
-        width: fit-content;
+        text-align: center;
     }
 
 
