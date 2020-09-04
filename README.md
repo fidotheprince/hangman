@@ -46,4 +46,12 @@ The visual component of the application is done through **HTML5** and **CSS3**. 
 
 # Reflection
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Creating hangman was a blast. This was the first time where I saw all of my skills as a Developer combine to make something that is authentically mine. Moreover, I loved the challenge of not relying on a framework or library to accomplish both the logical and visual components of the game. It’s not so much the technology that impresses me in regards to this game. It’s my ability to program everything from scratch that has ignited my love affair with it. 
+
+All the **JavaScript** logic is mine. All the visual design is mine. 
+
+That being said, there were many hurdles to overcome. Working with the hidden word as a **string data type** can be limiting. I had to find unique ways to evaluate that initial string as an **array**, or an **object**, and then return the current state of the game as I did so. 
+
+This both tested and grew my skills in **Object Oriented Programming** and **Functional Programming**. For me the solutions I developed integrated both approaches and also helped me keep my toolkit of algorithms sharpe. That said - I’m looking forward to my next challenge. 
+
+I’m grateful to share my work with you. I hope you enjoy it. 
