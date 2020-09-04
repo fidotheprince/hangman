@@ -29,11 +29,13 @@ The visual component of the application is done through **HTML5** and **CSS3**. 
 # User Stories 
 <p id="userst"></p>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-
-# Coming Soon 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+- As a player I want to see when I win or I lose 
+- As a player I want to know how many letters are in the word I am uncovering
+- As a player I want to know how many guesses I have left 
+- As a player I want to see when I have guessed incorrectly 
+- As a player I want to have an option to restart the game upon winning or losing 
+- As a player I want to play a game that looks modern 
+- As a player I want to see the hidden word, even if I guessed it wrong
 
 # Stack
 <p id="#stack"></p>
